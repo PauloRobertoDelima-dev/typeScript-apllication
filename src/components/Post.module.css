@@ -1,0 +1,137 @@
+.post {
+
+    background: var(--gray-800);
+    border-radius: 8px;
+    padding: 2.5rem;
+}
+
+.post + .post { /* isso significa que eu quero estilizar todo post que contenha um post antes*/
+
+ margin-top: 2rem;   
+
+}
+
+.content {
+    line-height: 1.6;
+    color: var(--gray-300);
+    margin-top: 1.5rem;
+}
+.content p {
+    
+    margin-top: 1rem;
+}
+.content a {
+    font-weight: bold;
+    color: var(--green-500);
+    text-decoration: none;
+}
+.content a:hover {
+    color: var(--green-300);  
+}
+
+.post > header { /*isso faz com que ele pegeue só o header superior,
+                       outra opção é colocoar uma className, isso se faz para não dar problemas 
+                       quando tiver mais header abaixo no projeto*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.post > header time {
+     font-size: 0.875rem;
+     color: var(--gray-400);
+}
+
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/*
+Passou para o avatar.module.css***
+.author img {
+    width: 3rem; se eu não quiser o box-sizzing, eu poderia utilizar calculo
+    por exempo, colocar o Width e o height com : width: calc (3rem + 12px); os 12px seriam a soma das
+    border e outline... 4 e 4 e 2 e 2 ... pois são 4 lados 
+    height: 3rem;
+    border-radius: 8px;
+    border: 4px solid var(--gray-800);
+    outline: 2px solid var(--green-500);
+}
+*/
+
+.authorinfo strong {
+    display: block;
+    color: var(--gray-100);
+    line-height: 1.6;
+}
+.authorinfo span {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--gray-400);
+    line-height: 1.6;
+}
+
+.commentForm {
+ width: 100%;
+ margin-top: 1.5rem;
+ padding-top: 1.5rem;
+ border-top: 1px solid var(--gray-100);
+}
+
+.commentForm > strong {
+    line-height: 1.6;
+    color: var(--gray-100);
+}
+.commentForm textarea {
+    width: 100%;
+    background: var(--gray-900);
+    border: 0;
+    resize: none; /*não quero permitir que o user redimencione a textarea*/
+    height: 6rem;
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--gray-100);
+    line-height: 1.4;
+    margin-top: 1rem;
+}
+
+.commentForm footer {
+    visibility: hidden;
+    max-height: 0;
+}
+
+.commentForm:focus-within footer { /* esse focus-within quer dizer que se tiver um focus no
+                                      footer(e pode ser qualquer outro) 
+                                      então sim eu vou aplicar essa estilização*/
+    visibility: visible;
+    max-height: none;
+}
+.commentForm button[type=submit] {
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    border: 0;
+    background-color: var(--green-500);
+    color: var(--white);
+    font-weight: bold;
+    cursor:pointer;
+    transition: background-color 0.1s;
+}
+.commentForm button[type=submit]:not(:disabled):hover {
+    background: var(--green-300);
+
+}
+.commentForm button[type=submit]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+.commentList {
+    margin-top: 2rem;
+}
+
+
+
+

@@ -1,0 +1,22 @@
+.wrapper {
+   max-width: 70rem;
+   margin: 2rem auto;
+   padding: 0 1rem;
+
+   display: grid;
+   grid-template-columns: 256px 1fr;
+   gap: 2rem;
+   align-items: flex-start; /*alinhar as duas boxs pelo topo*/
+}
+
+/*aplicando responsive - quando a tela for um iphone ou outro celular, 
+as mudanças abaixo ocorreram*/
+
+@media (max-width:768px) { /*quando a tela for menor que 768px*/
+   html {
+      font-size: 87.5% ; /*isso é igual a 14px -> se 16 é 100% logo 14px é 87,5% */
+   }
+   .wrapper {
+   grid-template-columns: 1fr; /*agora o meu grid vai ter só uma coluna e não duas*/
+ }
+}

@@ -1,0 +1,78 @@
+.sidebar {
+    background: var(--gray-800);
+    border-radius: 8px;
+    overflow: hidden; /* deixa tudo dentro do contenner e faz as bordinhas arredondadas*/
+}
+
+.cover {
+    width: 100%;
+    height: 72px;
+    object-fit: cover; /* ele corta a imagem e não à distorce*/
+}
+.profile {
+display: flex;
+flex-direction: column; /*para o nome e o cargo ficar um debaixo do outro*/
+align-items: center; 
+margin-top: -2rem; /* ao inves de usar -2rem eu poderia usar um calculo que seria 
+margin-top: calc(0px - 1.5rem - 6px); , que seria a metade do calculo da width e height*/
+}
+
+.avatar {
+    box-sizing: initial; /*faz com que o elemento ocupe um espaço a mais 
+    quando acrescento borda, etc, nesse caso a imagem fica do mesmo tamanho e não menor*/
+    width: 3rem; /*se eu não quiser o box-sizzing, eu poderia utilizar calculo
+    por exempo, colocar o Width e o height com : width: calc (3rem + 12px); os 12px seriam a soma das
+    border e outline... 4 e 4 e 2 e 2 ... pois são 4 lados */
+    height: 3rem;
+    border-radius: 8px;
+    border: 4px solid var(--gray-800);
+    outline: 2px solid var(--green-500);
+}
+
+.profile strong {
+    margin-top: 1rem;
+    color: var(--gray-100);
+    line-height: 1.6; /*160%*/
+}
+
+.profile span {
+    font-size: 0.875rem; /*eu quero 14px e 1rem tem 16px, logo 0.875rem=14px*/
+    color: var(--gray-400);
+    line-height: 1.6;
+
+
+}
+
+.sidebar footer {
+    border-top: 1px solid var(--gray-600);
+    margin-top: 1.5rem;
+    padding: 1.5rem 2rem 2rem;
+    
+}
+
+.sidebar a {
+    
+    background: transparent;
+    color: var(--green-500);
+    border: 1px solid var(--green-500);
+    border-radius: 8px;
+    height: 50px;
+    padding: 0 1rem;
+    font-weight: bold;
+    display: block; /* quando coloca esse display:block posso retirar o width: 100%; 
+    pois ele já aplica automaticamente*/
+    text-decoration: none; 
+
+    display: flex;
+    align-items: center;
+    justify-content: center; /*para o onteudo ficar alinhado no centro*/
+
+    gap: 0.75rem;
+    transition: color 0.1s, background-color 0.1s; /*quando o mouse passa e for mudar a cor
+     do 'Edite seu perfil' a mudança fica mais lenta 1segundo*/
+}
+
+.sidebar footer a:hover {
+    background: var(--green-500);
+    color: var(--white);
+}
